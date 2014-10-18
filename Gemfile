@@ -37,6 +37,7 @@ gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 
 gem 'omniauth-github'
+gem 'dotenv-rails'
 
 group :production do
   gem 'rails_12factor'
