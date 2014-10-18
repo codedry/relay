@@ -36,6 +36,8 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'omniauth-github'
+
 group :production do
   gem 'rails_12factor'
 end
