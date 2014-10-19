@@ -3,6 +3,9 @@ require 'test_helper'
 class TicketsControllerTest < ActionController::TestCase
   setup do
     @ticket = tickets(:one)
+    @current_user = users(:one)
+    session[:user_id] = @current_user.id
+    @ticket.update_attributes(user_id: @current_user.id)
   end
 
   test "should get index" do
