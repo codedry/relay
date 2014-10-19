@@ -1,6 +1,8 @@
 class Ticket < ActiveRecord::Base
   enum status: [ :pending, :ready ]
 
+  belongs_to :user
+
   before_create :generate_code
 
   private

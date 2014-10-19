@@ -1,10 +1,11 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
 
   # GET /tickets
   # GET /tickets.json
   def index
-    @tickets = Ticket.all
+    @tickets = current_user.tickets.all
   end
 
   # GET /tickets/1
@@ -14,7 +15,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets/new
   def new
-    @ticket = Ticket.new
+    @ticket = current_user.tickets.new
   end
 
   # GET /tickets/1/edit
@@ -24,7 +25,7 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-    @ticket = Ticket.new(ticket_params)
+    @ticket = current_user.tickets.new(ticket_params)
 
     respond_to do |format|
       if @ticket.save
@@ -64,7 +65,7 @@ class TicketsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ticket
-      @ticket = Ticket.find(params[:id])
+      @ticket = current_user.tickets.where(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
