@@ -11,5 +11,7 @@ class SignInWithGithubTest < ActionDispatch::IntegrationTest
 
     expected_message = "Welcome Example!"
     assert page.has_content?(expected_message), "'#{expected_message}' was not found"
+
+    click_link "Sign out"
   end
 end

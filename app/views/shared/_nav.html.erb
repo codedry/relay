@@ -4,6 +4,7 @@
   <li>
     <% if current_user %>
       Welcome <%= current_user.first_name %>!
+      <%= link_to "Sign out", signout_path %>
     <% else %>
       <%= link_to "Sign in with Github", "/auth/github" %>
     <% end %>
