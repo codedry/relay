@@ -1,6 +1,10 @@
 <div class="container">
   <%= render "shared/header" %>
 
+  <% flash.each do |type, message| %>
+    <div class="alert <%= bootstrap_css_class_for_flash(type) %>" role="alert"><%= message %></div>
+  <% end %>
+
   <div class="jumbotron">
     <input id="code-field" type="text" placeholder="Enter Code" />
     <p><a class="btn btn-primary btn-success" href="#" role="button">GO</a></p>

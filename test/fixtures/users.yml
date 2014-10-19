@@ -1,0 +1,6 @@
+one:
+  provider: github
+  uid: 1234
+  name: John Doe
+  nickname: jdoe
+

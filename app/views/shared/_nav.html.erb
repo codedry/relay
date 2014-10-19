@@ -1,5 +1,12 @@
 <ul class="nav nav-pills pull-right">
   <li class="active"><%= link_to "Dashboard", root_path %></li>
   <li><%= link_to "Events", "#" %></li>
-  <li><%= link_to "Metrics", "#" %></li>
+  <li>
+    <% if current_user %>
+      Welcome <%= current_user.first_name %>!
+      <%= link_to "Sign out", signout_path %>
+    <% else %>
+      <%= link_to "Sign in with Github", "/auth/github" %>
+    <% end %>
+  </li>
 </ul>
