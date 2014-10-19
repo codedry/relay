@@ -4,7 +4,7 @@ class CreateTickets < ActiveRecord::Migration
       t.string  :name
       t.string  :code
       t.text    :notes
-      t.integer :status
+      t.integer :status, default: 0
 
       t.timestamps null: false
     end
