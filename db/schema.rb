@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141019212315) do
   create_table "tickets", force: true do |t|
     t.string   "name"
     t.string   "code"
+    t.text     "notes"
     t.integer  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
