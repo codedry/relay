@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :tickets
+
   root 'home#index'
 
   get '/auth/:provider/callback', to: 'sessions#create'

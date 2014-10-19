@@ -11,4 +11,11 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def authorize
+    unless current_user
+      flash[:error] = "Please sign in to view this page"
+      redirect_to root_path
+    end
+  end
+
 end
