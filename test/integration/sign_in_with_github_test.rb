@@ -8,5 +8,8 @@ class SignInWithGithubTest < ActionDispatch::IntegrationTest
 
     expected_message = "Successfully signed in!"
     assert page.has_content?(expected_message), "'#{expected_message}' was not found"
+
+    expected_message = "Welcome Example!"
+    assert page.has_content?(expected_message), "'#{expected_message}' was not found"
   end
 end
